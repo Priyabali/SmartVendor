@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   background-color: #f7f8fa;
   font-family: 'Poppins', sans-serif;
@@ -69,4 +70,77 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #121212; /* Optional: clean dark background */
   color: #f0f0f0; /* Light text */
+=======
+body {
+  background-color: #f7f8fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+.vendor-hero img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.card img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-lg {
+  border-radius: 10px;
+  padding: 10px 30px;
+}
+.navbar {
+  background-color: #2b2b2b; /* dark grey */
+}.vendor-hero {
+  background: linear-gradient(135deg, #2f2f2f, #1f1f1f);
+  padding: 4rem 2rem;
+  border-radius: 25px;
+  color: #f1f1f1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.vendor-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.vendor-hero p {
+  font-size: 1.2rem;
+  color:#242124 ;
+}
+
+.vendor-hero .btn-outline-success {
+  border-color: #00ff88;
+  color: #00ff88;
+  transition: all 0.3s ease;
+}
+
+.vendor-hero .btn-outline-success:hover {
+  background-color: #00ff88;
+  color: #1f1f1f;
+  box-shadow: 0 0 10px #00ff88;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212; /* Optional: clean dark background */
+  color: #f0f0f0; /* Light text */
+>>>>>>> f5fdd641421199302e941dc03257c497b1ae5c0d
 }

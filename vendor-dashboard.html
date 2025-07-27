@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,3 +149,155 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vendor Dashboard</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="vendordashboard.css"/>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBw6KJE_D3MgWjInY5Zcz8fLc1sofRd8PQ",
+      authDomain: "smartvendorauth.firebaseapp.com",
+      projectId: "smartvendorauth",
+      storageBucket: "smartvendorauth.appspot.com",
+      messagingSenderId: "276207215197",
+      appId: "1:276207215197:web:49d4af7fd48b2ed04423b4",
+      measurementId: "G-NJMQDSKQR7"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script>
+    // Redirect to login if not logged in
+    firebase.auth().onAuthStateChanged((user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <div class="vendor-dashboard">
+    <div class="sidebar">
+      <h2>SmartVendor</h2>
+      <ul>
+        <li class="active">🏠 Dashboard</li>
+        <li>📦 Orders</li>
+        <li>⬆️ Upload Items</li>
+        <li><a href="vendor-map.html">🗺️ Vendor Map</a></li> <!-- ✅ Added -->
+        <li onclick="logout()">🚪 Logout</li> <!-- ✅ Clickable logout -->
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div class="header">
+        <h1>Welcome, Vendor!</h1>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Total Sales</h3>
+          <p>₹5,000</p>
+        </div>
+        <div class="card">
+          <h3>New Orders</h3>
+          <p>12</p>
+        </div>
+        <div class="card">
+          <h3>Products</h3>
+          <p>34</p>
+        </div>
+      </div>
+<div class="charts">
+  <div class="chart">
+    <h3>Sales Overview</h3>
+    <div class="bar-chart">
+      <div class="bar" style="height: 70%; background-color: #4caf50;"></div>
+      <div class="bar" style="height: 50%; background-color: #81c784;"></div>
+      <div class="bar" style="height: 80%; background-color: #388e3c;"></div>
+      <div class="bar" style="height: 60%; background-color: #66bb6a;"></div>
+      <div class="bar" style="height: 90%; background-color: #2e7d32;"></div>
+    </div>
+  </div>
+  <div class="chart">
+    <h3>Orders Breakdown</h3>
+    <div class="pie-chart">
+      <div class="slice slice1">40%</div>
+      <div class="slice slice2">25%</div>
+      <div class="slice slice3">20%</div>
+      <div class="slice slice4">15%</div>
+    </div>
+    <div class="legend">
+      <div><span class="color color1"></span> Product A</div>
+      <div><span class="color color2"></span> Product B</div>
+      <div><span class="color color3"></span> Product C</div>
+      <div><span class="color color4"></span> Product D</div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Logout Script -->
+  <script>
+    function logout() {
+      firebase.auth().signOut().then(() => {
+        alert("Logged out successfully!");
+        window.location.href = "login.html";
+      }).catch((error) => {
+        alert("Logout failed: " + error.message);
+      });
+    }
+  </script>
+  <!-- AI Pricing Modal Trigger -->
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aiPricingModal">
+  💡 AI Price Suggestion
+</button>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="aiPricingModal" tabindex="-1" aria-labelledby="aiPricingLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aiPricingLabel">AI Pricing Suggestion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control mb-2" placeholder="Product Name" id="productName" />
+        <input type="text" class="form-control mb-2" placeholder="Category" id="productCategory" />
+        <input type="number" class="form-control mb-2" placeholder="Cost Price" id="costPrice" />
+        <button class="btn btn-success w-100" onclick="suggestPrice()">Suggest Price</button>
+        <div id="suggestedPrice" class="mt-3 text-success fw-bold"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function suggestPrice() {
+    const name = document.getElementById("productName").value;
+    const category = document.getElementById("productCategory").value;
+    const cost = parseFloat(document.getElementById("costPrice").value);
+
+    // Mocked AI logic (can later connect to real backend)
+    const suggested = cost + (Math.random() * 30).toFixed(2);
+    document.getElementById("suggestedPrice").innerText = `Suggested Price: ₹${suggested}`;
+  }
+</script>
+
+</body>
+</html>
+>>>>>>> f5fdd641421199302e941dc03257c497b1ae5c0d
